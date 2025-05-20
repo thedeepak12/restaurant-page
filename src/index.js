@@ -1,4 +1,3 @@
-import "./style.css";
 import home from "./home.js";
 import menu from "./menu.js";
 import about from "./about.js";
@@ -12,7 +11,5 @@ function setUpTabs() {
 }
 
 home();
-menu();
-about();
 
 setUpTabs();
