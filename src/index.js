@@ -1,6 +1,7 @@
 import home from "./home.js";
 import menu from "./menu.js";
 import about from "./about.js";
+import "./style.css";
 
 function setUpTabs() {
     const buttons = document.querySelectorAll("header nav button");
