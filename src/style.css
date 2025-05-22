@@ -1,0 +1,31 @@
+button {
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.background-img {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    z-index: -1;
+}
