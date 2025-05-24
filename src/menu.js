@@ -14,6 +14,8 @@ import ginImg from "./assets/images/gin-sour.jpg"
 export default function menu() {
     const content = document.querySelector("#content");
 
+    content.innerHTML = "";
+
     const menuContainer = document.createElement("div");
     const image = document.createElement("img");
     image.src = restaurantImg;
@@ -92,4 +94,41 @@ export default function menu() {
             ],
         },
     ];    
+
+    menuSections.forEach((section) => {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.classList.add("menu-section");
+
+        const title = document.createElement("h2");
+        title.textContent = section.title;
+        sectionDiv.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.classList.add("menu-grid");
+
+        section.items.forEach((item) => {
+            const card = document.createElement("div");
+            card.classList.add("menu-card");
+
+            const img = document.createElement("img");
+            img.src = item.image;
+
+            const name = document.createElement("h3");
+            name.textContent = item.name;
+
+            const description = document.createElement("p");
+            description.textContent = item.description;
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(description);
+            grid.appendChild(card);
+        });
+
+        sectionDiv.appendChild(grid);
+        menuContainer.appendChild(sectionDiv);
+    });
+
+    content.appendChild(image);
+    content.appendChild(menuContainer);
 }
