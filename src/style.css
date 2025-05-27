@@ -5,25 +5,38 @@
     font-family: 'Helvetica Neue', sans-serif;
 }
 
-button {
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
     background-color: transparent;
-    color: #ffffff;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
     font-family: 'Georgia', serif;
     font-size: 1.5rem;
     padding: 10px 20px;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
+    position: relative;
 }
 
 button:hover {
     transform: translateY(-2px);
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+button.active-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
 }
 
 .background-img {

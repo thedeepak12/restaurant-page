@@ -3,14 +3,35 @@ import menu from "./menu.js";
 import about from "./about.js";
 import "./style.css";
 
-function setUpTabs() {
-    const buttons = document.querySelectorAll("header nav button");
+function clearActiveButtons() {
+    document.querySelectorAll("nav button").forEach(btn => {
+        btn.classList.remove("active-tab");
+    });
+}
 
-    buttons[0].addEventListener("click", home);
-    buttons[1].addEventListener("click", menu);
-    buttons[2].addEventListener("click", about);
+function setUpTabs() {
+    const buttons = document.querySelectorAll("nav button");
+
+    buttons[0].addEventListener("click", () => {
+        clearActiveButtons();
+        buttons[0].classList.add("active-tab");
+        home();
+    });
+
+    buttons[1].addEventListener("click", () => {
+        clearActiveButtons();
+        buttons[1].classList.add("active-tab");
+        menu();
+    });
+
+    buttons[2].addEventListener("click", () => {
+        clearActiveButtons();
+        buttons[2].classList.add("active-tab");
+        about();
+    });
 }
 
 home();
+document.querySelector("nav button").classList.add("active-tab");
 
 setUpTabs();
